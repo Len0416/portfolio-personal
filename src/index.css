@@ -41,3 +41,87 @@ textarea {
   background: #ef4444;
   color: #ffffff;
 }
+
+/* Contenedor principal de la fotografía */
+.profile-portrait {
+  position: relative;
+  isolation: isolate;
+
+  width: clamp(220px, 28vw, 340px);
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+
+  /* Movimiento suave hacia arriba y abajo */
+  animation: portrait-float 4s ease-in-out infinite;
+}
+
+/* Borde con degradado giratorio */
+.profile-portrait__ring {
+  position: absolute;
+  inset: -4px;
+  z-index: 0;
+
+  border-radius: 50%;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #ee2222 80deg,
+    #f83838 145deg,
+    transparent 210deg,
+    transparent 260deg,
+    #ee2222 320deg,
+    transparent 360deg
+  );
+
+  filter: drop-shadow(0 0 8px rgba(238, 34, 34, 0.4));
+
+  animation: ring-rotate 5s linear infinite;
+}
+
+/* Fotografía recortada en círculo */
+.profile-portrait__image {
+  position: absolute;
+  inset: 4px;
+  z-index: 1;
+
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 2px solid #080808;
+}
+
+/* Flotación vertical */
+@keyframes portrait-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Rotación independiente del borde */
+@keyframes ring-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .profile-portrait,
+  .profile-portrait__ring {
+    animation: none;
+  }
+}

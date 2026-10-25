@@ -2,7 +2,7 @@ import { CodeXml } from 'lucide-react';
 
 function Navbar() {
   return (
-    <nav className="bg-[#080808] text-[#F5F5F5] fixed top-0 w-full border-b border-[#303030]">
+    <nav className="bg-[#080808] text-[#F5F5F5] fixed top-0 w-full border-b z-2 border-[#303030]">
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <div className="text-lg font-semibold flex items-center gap-2">
           <CodeXml className="text-red-500" />
