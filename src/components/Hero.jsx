@@ -2,8 +2,8 @@ import ProfilePortrait from './ui/ProfilePortrait.jsx';
 
 function Hero() {
   return (
-    <div className="min-h-screen bg-[#080808] text-[#F5F5F5]" id="home">
-      <section className="flex items-center mx-auto max-w-6xl justify-center px-6">
+    <div className="bg-[#080808] text-[#F5F5F5]" id="home">
+      <section className="flex items-center mx-auto max-w-6xl justify-center px-6 py-12">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm uppercase tracking-[0.25em] text-red-500">
             Portfolio / Desarrollador web
@@ -42,14 +42,6 @@ function Hero() {
           </div>
         </div>
         <ProfilePortrait />
-      </section>
-      <section
-        id="proyectos"
-        className="border-t border-[#303030] mx-auto max-w-6xl px-6 py-16"
-      >
-        <h2 className="text-2xl font-semibold font-jakarta mb-6">
-          Proyectos destacados
-        </h2>
       </section>
     </div>
   );
